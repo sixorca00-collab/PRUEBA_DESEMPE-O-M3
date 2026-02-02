@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "754d",
+      "username": "Juan",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "id": "0f69",
+      "username": "Tomas",
+      "password": "4444",
+      "role": "user"
+    }
+  ],
+  "task": [
+    {
+      "id": "024e",
+      "name": "Completar",
+      "desc": "complete",
+      "state": "pending",
+      "Ipriority": "mean"
+    }
+  ]
+}
