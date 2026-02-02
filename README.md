@@ -1,116 +1,99 @@
-# Simulacro-M3
+# Simulation-M3
 
+Order Management Web System – Frontend Simulation
 
+Frontend project simulating the complete order flow of a restaurant, using Vanilla JavaScript, a JSON Server as a mock API, and LocalStorage for session and role management.
 
-Sistema Web de Gestión de Pedidos – Simulacro Frontend
+This project was developed as a performance test, meeting criteria for authentication, roles, persistence, logical security, and separation of views.
 
-Proyecto frontend que simula el flujo completo de pedidos de un restaurante, utilizando JavaScript Vanilla, JSON Server como API falsa y LocalStorage para el manejo de sesión y roles.
-
-Este proyecto fue desarrollado como simulacro de prueba de desempeño, cumpliendo criterios de autenticación, roles, persistencia, seguridad lógica y separación de vistas.
-
-# Tecnologías Utilizadas
+# Technologies Used
 
 HTML5
-
 CSS3
-
 Bootstrap 5
+Vanilla JavaScript (ES Modules)
+JSON Server (Mock API)
+LocalStorage (session management)
+No real backend used
+No frameworks used (React, Vue, etc.)
 
-JavaScript Vanilla (ES Modules)
+# General Description
 
-JSON Server (API simulada)
+The application allows:
 
-LocalStorage (manejo de sesión)
+User registration and login
 
-No se utiliza backend real
-No se utilizan frameworks (React, Vue, etc.)
+Role management (admin and user)
 
-# Descripción General
+Data consumption from a mock API
 
-La aplicación permite:
+Task and status management
 
-Registro e inicio de sesión de usuarios
+Administrative panel with metrics
 
-Manejo de roles (admin y user)
+Session persistence
 
-Consumo de datos desde una API simulada
+Role-based route protection
 
-Gestión de productos y pedidos
+The design and logic are geared towards simulating a real-world task environment without relying on a production backend.
 
-Panel administrativo con métricas
+System Roles
+User
 
-Persistencia de sesión
+View tasks
 
-Protección de rutas según rol
+Add tasks to a list
 
-El diseño y la lógica están orientados a simular un entorno real de pedidos sin depender de un backend productivo.
+Modify statuses
 
-Roles del Sistema
-Usuario (user)
+Check task status
 
-Ver productos
+Administrator
 
-Agregar productos al pedido
+Access the administrative dashboard
 
-Crear órdenes
+View general metrics
 
-Ver solo sus propias órdenes
+Change order statuses
 
-Consultar estado de pedidos
+Create and list tasks
 
-Administrador (admin)
-
-Acceso a dashboard administrativo
-
-Ver métricas generales
-
-Cambiar estado de órdenes
-
-Crear y listar productos
-
-Supervisar todas las órdenes
-# Estructura del proyecto
+Monitor all tasks
+# Project structure
 /index.html
 /pages
   ├── admin.html
-  └── menu.html
+  └── task.html
 /js
   ├── main.js
   ├── login.js
   ├── register.js
   ├── admin.js
-  └── user.js
+  └── users.js
 /db.json
 /README.md
-# Estructura de base de datos JSON
+# JSON database structure
 DataBase
 {
   "users": [],
-  "products": [],
-  "orders": []
+  "task": [],
 }
-Usuarios 
+Users
 {
   "id": 1,
   "username": "admin",
   "password": "1234",
   "role": "admin"
 }
-Productos:
+Task:
 {
   "id": 1,
-  "name": "Burger",
-  "price": 12000
+  "name": "make a task",
+  "description": "test a program developed",
+  "state": "how goes a task",
+  "priority": "to know how urgent it is"
 }
-Ordenes:
-{
-  "id": 1,
-  "userId": 1,
-  "items": [],
-  "status": "pending",
-  "total": 24000,
-  "date": "2026-01-28"
-}
+
 # Instalar Ejecucion
 Instalar dependencias:
                         npm install json-server
