@@ -94,8 +94,8 @@ Task:
   "priority": "to know how urgent it is"
 }
 
-# Instalar Ejecucion
-Instalar dependencias:
-                        npm install json-server
-Ejecutar en una terminal el JSONSERVER
-                        npx json-server --watch db.json --port 3000
+# Install Execution
+Install dependencies:
+          npm install json-server
+Run JSONSERVER in a terminal:
+          npx json-server --watch db.json --port 3000

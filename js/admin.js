@@ -5,7 +5,7 @@ const isAuth = localStorage.getItem("isAuth");
 const role = localStorage.getItem("role");
 
 if (!isAuth || role !== "admin") {
-  // Si no está autenticado o no es user, vuelve al login
+  // if not is validate
   window.location.href = "../index.html";
 }
 
