@@ -65,7 +65,33 @@
         <ul id="taskList" class="list-group d-flex justify-content-between"></ul>
       </div>
     </div>
+    <!-- ================= PROFILE MODAL ================= -->
+  <div class="modal fade" id="Profile" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
 
+        <div class="modal-header">
+          <h5 class="modal-title">
+            User: <span id="Suser"></span>
+          </h5><br>
+          <p id="idUser"></p><br>
+          <p id="">Active</p>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <p id="modalprofile" class="fw-bold"></p>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
     <script type="module" src="../js/admin.js"></script>
 </body>
 </html>

@@ -47,6 +47,8 @@ if (profileBtn) {
     document.getElementById("Suser").textContent = currentUser.username;
     document.getElementById("modalprofile").textContent =
       "Role: " + currentUser.role;
+    document.getElementById("idUser").textContent =
+    "ID:" + currentUser.id
 
     const profileModal = new bootstrap.Modal(
       document.getElementById("Profile")

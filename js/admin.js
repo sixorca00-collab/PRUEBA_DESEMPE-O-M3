@@ -15,6 +15,7 @@ const priority = document.getElementById("priority");
 const addTaskBtn = document.getElementById("addTask");
 const taskList = document.getElementById("taskList");
 const logoutBtn = document.getElementById("logoutBtn");
+const profileBtn = document.getElementById("profiletBtn")
 
 
 // Load task to entry
@@ -89,4 +90,27 @@ logoutBtn.addEventListener("click", () => {
 // Redirect to login
   window.location.href = "../index.html";
 });
+// PROFILE MODAL 
+if (profileBtn) {
+  profileBtn.addEventListener("click", () => {
 
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (!currentUser) {
+      alert("No user logged in");
+      return;
+    }
+
+    document.getElementById("Suser").textContent = currentUser.username;
+    document.getElementById("modalprofile").textContent =
+      "Role: " + currentUser.role;
+    document.getElementById("idUser").textContent =
+    "ID:" + currentUser.id
+
+    const profileModal = new bootstrap.Modal(
+      document.getElementById("Profile")
+    );
+
+    profileModal.show();
+  });
+}

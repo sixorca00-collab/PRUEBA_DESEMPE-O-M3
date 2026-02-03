@@ -8,7 +8,7 @@ export function loginUser() {
 
     const username = document.getElementById("lUser").value;
     const password = document.getElementById("lPass").value;
-
+// Basic validation
     if (!username || !password) {
       alert("Fill all fields");
       return;
