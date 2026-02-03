@@ -1,4 +1,3 @@
-// URL BASE DEL SERVIDOR
 const API_URL = "http://localhost:3000";
 
 const isAuth = localStorage.getItem("isAuth");
@@ -21,7 +20,7 @@ const logoutBtn = document.getElementById("logoutBtn");
 // Load task to entry
 document.addEventListener("DOMContentLoaded", loadTask);
 
-// FUNCIÓN PARA CARGAR PRODUCTOS
+// FUNCTION FOR LOADING TASK
 async function loadTask() {
   taskList.innerHTML = "";
 
@@ -40,7 +39,7 @@ async function loadTask() {
       <button class="btn btn-danger btn-sm">Delete</button>
     `;
 
-    // ELIMINAR PRODUCTO
+    // DELETE TASK
     li.querySelector("button").addEventListener("click", async () => {
       await fetch(`${API_URL}/task/${task.id}`, {
         method: "DELETE"
@@ -52,7 +51,7 @@ async function loadTask() {
   });
 }
 
-// CREAR PRODUCTO
+// MAKE TASK
 addTaskBtn.addEventListener("click", async () => {
   const name = taskNameInput.value;
   const desc = taskDescInput.value;
@@ -81,13 +80,13 @@ addTaskBtn.addEventListener("click", async () => {
   loadTask();
 });
 logoutBtn.addEventListener("click", () => {
-  // Eliminar sesión
+  //DELETE SESSION
   localStorage.removeItem("isAuth");
   localStorage.removeItem("currentUser");
   localStorage.removeItem("role");
   localStorage.removeItem("userId");
 
-  // Redirigir al login
+// Redirect to login
   window.location.href = "../index.html";
 });
 

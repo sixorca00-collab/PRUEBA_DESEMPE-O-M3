@@ -1,7 +1,7 @@
 import { registerUser } from "./register.js";
 import { loginUser } from "./login.js";
 
-// Cambiar vistas
+// Change views
 const registerView = document.getElementById("registerView");
 const loginView = document.getElementById("loginView");
 
@@ -15,6 +15,6 @@ document.getElementById("goRegister").onclick = () => {
   registerView.classList.remove("d-none");
 };
 
-// Funciones principales
+// Main functions
 registerUser();
 loginUser();

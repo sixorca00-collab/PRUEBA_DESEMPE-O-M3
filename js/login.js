@@ -1,7 +1,3 @@
-// login.js
-// Esta función valida el usuario contra JSON Server
-// y guarda la sesión en localStorage
-
 export async function loginUser() {
   const btn = document.getElementById("btnLogin");
 
@@ -9,13 +5,13 @@ export async function loginUser() {
     const username = document.getElementById("lUser").value;
     const password = document.getElementById("lPass").value;
 
-    // Validación básica
+// Basic validation
     if (!username || !password) {
       alert("Fill all fields");
       return;
     }
 
-    // Petición al servidor simulando login real
+// Request to the server
     const res = await fetch(
       `http://localhost:3000/users?username=${username}&password=${password}`
     );

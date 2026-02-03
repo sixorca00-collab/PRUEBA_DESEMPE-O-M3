@@ -1,11 +1,11 @@
-//Datos de register
+//Register data
 export const RuserName = document.getElementById("R-username");
 export const RuserPass= document.getElementById("R-password");
 export const RuserRol= document.getElementById("R-userol");
 export const BtnReg= document.getElementById("btnReg");
 export const BtnChangeFormR = document.getElementById("text_reg");
 export const Rform = document.getElementById("R-form");
-//Datos de login
+//Login details
 export const BtnChangeFormL = document.getElementById("logBtn");
 export const Lform = document.getElementById("L-form");
 export const lUserName = document.getElementById("username");

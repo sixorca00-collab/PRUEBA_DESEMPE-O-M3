@@ -5,12 +5,12 @@ export function registerUser() {
     const username = document.getElementById("rUser").value;
     const password = document.getElementById("rPass").value;
     const role = document.getElementById("rRole").value;
-
+ // Basic validation
     if (!username || !password) {
       alert("Fill all fields");
       return;
     }
-
+// We checked that the user does not exist.
     const res = await fetch(`http://localhost:3000/users?username=${username}`);
     const data = await res.json();
 
@@ -18,7 +18,7 @@ export function registerUser() {
       alert("User already exists");
       return;
     }
-
+// Send user to database
     await fetch("http://localhost:3000/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

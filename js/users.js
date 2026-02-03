@@ -1,9 +1,5 @@
-/*********************************************************
- * USER PANEL LOGIC
- *********************************************************/
-
+// USER PANEL LOGI
 const API_URL = "http://localhost:3000";
-
 // DOM ELEMENTS
 const taskList = document.getElementById("taskList");
 const logoutBtn = document.getElementById("logoutBtn");
@@ -12,9 +8,9 @@ const logoutBtn = document.getElementById("logoutBtn");
 let selectedTaskId = null;
 let modalInstance = null;
 
-/*********************************************************
- * ROUTE GUARD
- *********************************************************/
+
+ //ROUTE GUARD
+
 const isAuth = localStorage.getItem("isAuth");
 const role = localStorage.getItem("role");
 
@@ -22,9 +18,9 @@ if (!isAuth || role !== "user") {
   window.location.href = "../index.html";
 }
 
-/*********************************************************
- * LOGOUT
- *********************************************************/
+
+ // LOGOUT
+
 logoutBtn.addEventListener("click", () => {
   localStorage.removeItem("isAuth");
   localStorage.removeItem("currentUser");
@@ -33,14 +29,14 @@ logoutBtn.addEventListener("click", () => {
   window.location.href = "../index.html";
 });
 
-/*********************************************************
- * LOAD TASKS
- *********************************************************/
+
+ // LOAD TASKS
+
 document.addEventListener("DOMContentLoaded", loadTask);
 
-/*********************************************************
- * FETCH AND RENDER TASKS
- *********************************************************/
+
+ // FETCH AND RENDER TASKS
+
 async function loadTask() {
   try {
     const res = await fetch(`${API_URL}/task`);
@@ -88,9 +84,8 @@ async function loadTask() {
   }
 }
 
-/*********************************************************
- * SAVE TASK STATE FROM MODAL
- *********************************************************/
+//SAVE TASK STATE FROM MODAL
+
 document
   .getElementById("saveTaskStateBtn")
   .addEventListener("click", async () => {
