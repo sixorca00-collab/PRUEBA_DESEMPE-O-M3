@@ -4,10 +4,15 @@ export function registerUser() {
   btn.addEventListener("click", async () => {
     const username = document.getElementById("rUser").value;
     const password = document.getElementById("rPass").value;
+    const Cpassword = document.getElementById("CrPass").value;    
     const role = document.getElementById("rRole").value;
  // Basic validation
-    if (!username || !password) {
+    if (!username || !password || !Cpassword) {
       alert("Fill all fields");
+      return;
+    } 
+    else if(password != Cpassword){
+      alert("The passwords no same")
       return;
     }
 // We checked that the user does not exist.

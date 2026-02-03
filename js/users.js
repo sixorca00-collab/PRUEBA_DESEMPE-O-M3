@@ -1,15 +1,17 @@
-// USER PANEL LOGI
+// USER PANEL LOGIC
 const API_URL = "http://localhost:3000";
+
 // DOM ELEMENTS
 const taskList = document.getElementById("taskList");
 const logoutBtn = document.getElementById("logoutBtn");
+const profileBtn = document.getElementById("profiletBtn");
 
 // MODAL STATE
 let selectedTaskId = null;
 let modalInstance = null;
 
 
- //ROUTE GUARD
+// ROUTE GUARD
 
 const isAuth = localStorage.getItem("isAuth");
 const role = localStorage.getItem("role");
@@ -19,7 +21,7 @@ if (!isAuth || role !== "user") {
 }
 
 
- // LOGOUT
+//LOGOUT 
 
 logoutBtn.addEventListener("click", () => {
   localStorage.removeItem("isAuth");
@@ -30,12 +32,37 @@ logoutBtn.addEventListener("click", () => {
 });
 
 
- // LOAD TASKS
+// PROFILE MODAL 
+
+if (profileBtn) {
+  profileBtn.addEventListener("click", () => {
+
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (!currentUser) {
+      alert("No user logged in");
+      return;
+    }
+
+    document.getElementById("Suser").textContent = currentUser.username;
+    document.getElementById("modalprofile").textContent =
+      "Role: " + currentUser.role;
+
+    const profileModal = new bootstrap.Modal(
+      document.getElementById("Profile")
+    );
+
+    profileModal.show();
+  });
+}
+
+
+// LOAD TASKS 
 
 document.addEventListener("DOMContentLoaded", loadTask);
 
 
- // FETCH AND RENDER TASKS
+// FETCH AND RENDER TASKS 
 
 async function loadTask() {
   try {
@@ -84,7 +111,8 @@ async function loadTask() {
   }
 }
 
-//SAVE TASK STATE FROM MODAL
+
+//SAVE TASK STATE FROM MODAL 
 
 document
   .getElementById("saveTaskStateBtn")

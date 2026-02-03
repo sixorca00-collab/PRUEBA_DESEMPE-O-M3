@@ -11,6 +11,12 @@
       "username": "Tomas",
       "password": "4444",
       "role": "user"
+    },
+    {
+      "id": "8721",
+      "username": "Jose",
+      "password": "555",
+      "role": "admin"
     }
   ],
   "task": [
@@ -18,7 +24,7 @@
       "id": "ee76",
       "name": "Testear",
       "desc": "Johan",
-      "state": "Pending",
+      "state": "In process",
       "Ipriority": "high"
     }
   ]
